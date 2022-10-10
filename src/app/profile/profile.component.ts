@@ -9,7 +9,6 @@ import { ProfileService } from './profile.service';
 export class ProfileComponent implements OnInit {
 
   editMode: boolean = true;
-  imgUrl: string = '';
   slimData: any;
   slim: any;
 
@@ -23,7 +22,8 @@ export class ProfileComponent implements OnInit {
   slimOptions = {
     ratio: '1:1',
     didInit: this.slimInit.bind(this),
-    uploadBase64:true
+    uploadBase64:true,
+    labelLoading: 'Uploading'
   };
 
   slimInit( data: any, slim: any ) {
@@ -40,7 +40,8 @@ export class ProfileComponent implements OnInit {
         this.profileService.loginUser().subscribe( result => {
           if( result.status ) {
             this.profileService.uploadImage(blob, result.auth_token).subscribe( result => {
-              this.editMode = false;
+              let imageSource = result.image_url;
+              this.slim.load(imageSource);
             });
           }
         });
