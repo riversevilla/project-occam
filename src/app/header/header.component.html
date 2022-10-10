@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-expand-md bg-white">
+    <a class="navbar-brand mx-lg-6 mx-xl-6 mx-md-6" [routerLink]="['/welcome']">
+        <img src="assets/svg/logo.svg" alt="" width="135" height="35">
+    </a>
+    <div class="nav-item ms-auto me-3 me-md-5 dropdown d-md-none d-lg-none d-xl-none">
+        <a class="nav-link" href="#" aria-expanded="false">
+            <img src="assets/svg/profile-photo-icon.svg" alt="" width="34" height="30">
+        </a>
+        <ul class="dropdown-menu dropdown-menu-center">
+            <div class="caret-up">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="9" viewBox="0 0 20 9">
+                    <path id="Polygon_10" data-name="Polygon 10" d="M10,0,20,9H0Z" fill="rgba(0,0,0,0.8)"/>
+                </svg>
+            </div>
+            <li><a class="dropdown-item" [routerLink]="['/profile']">EDIT PROFILE</a></li>
+            <li><a class="dropdown-item" href="#">LOGOUT</a></li>
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse me-7" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item ms-4 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" aria-expanded="false">Forum</a>
+                <ul class="dropdown-menu dropdown-menu-center">
+                    <div class="caret-up">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="9" viewBox="0 0 20 9">
+                            <path id="Polygon_10" data-name="Polygon 10" d="M10,0,20,9H0Z" fill="rgba(0,0,0,0.8)"/>
+                        </svg>
+                    </div>
+                    <li><a class="dropdown-item" href="#">Programme</a></li>
+                    <li><a class="dropdown-item" href="#">Speakers</a></li>
+                    <li><a class="dropdown-item" href="#">About</a></li>
+                  </ul>
+            </li>
+            <li class="nav-item ms-4">
+                <a class="nav-link" href="#">Networking</a>
+            </li>
+            <li class="nav-item ms-4 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" aria-expanded="false">Resources</a>
+                <ul class="dropdown-menu dropdown-menu-center">
+                    <div class="caret-up">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="9" viewBox="0 0 20 9">
+                            <path id="Polygon_10" data-name="Polygon 10" d="M10,0,20,9H0Z" fill="rgba(0,0,0,0.8)"/>
+                        </svg>
+                    </div>
+                    <li><a class="dropdown-item" href="#">Video On Demand</a></li>
+                    <li><a class="dropdown-item" href="#">Downloads</a></li>
+                </ul>
+            </li>
+            <li class="nav-item ms-4">
+                <a class="nav-link" href="#">Help</a>
+            </li>
+            <li class="nav-item ms-4 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" aria-expanded="false">
+                    <img src="assets/svg/profile-photo-icon.svg" alt="" width="34" height="30">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-center">
+                    <div class="caret-up">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="9" viewBox="0 0 20 9">
+                            <path id="Polygon_10" data-name="Polygon 10" d="M10,0,20,9H0Z" fill="rgba(0,0,0,0.8)"/>
+                        </svg>
+                    </div>
+                    <li><a class="dropdown-item" [routerLink]="['/profile']">Edit Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

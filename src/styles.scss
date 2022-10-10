@@ -1,1 +1,239 @@
 /* You can add global styles to this file, and also import other style files */
+$border-dark: #1C3C34;
+
+@import "/node_modules/bootstrap/scss/functions";
+@import "/node_modules/bootstrap/scss/variables";
+
+$spacers: map-merge(
+    (
+        6: $spacer * 5,
+        7: $spacer * 7
+    ),
+    $spacers
+);
+
+@import "/node_modules/bootstrap/scss/mixins";
+@import "/node_modules/bootstrap/scss/maps";
+@import "/node_modules/bootstrap/scss/utilities";
+@import "/node_modules/bootstrap/scss/root";
+@import "/node_modules/bootstrap/scss/reboot";
+@import "/node_modules/bootstrap/scss/type";
+@import "/node_modules/bootstrap/scss/images";
+@import "/node_modules/bootstrap/scss/containers";
+@import "/node_modules/bootstrap/scss/grid";
+@import "/node_modules/bootstrap/scss/nav";
+@import "/node_modules/bootstrap/scss/navbar";
+@import "/node_modules/bootstrap/scss/buttons";
+@import "/node_modules/bootstrap/scss/transitions";
+@import "/node_modules/bootstrap/scss/dropdown";
+@import "/node_modules/bootstrap/scss/button-group";
+@import "/node_modules/bootstrap/scss/card";
+@import "/node_modules/bootstrap/scss/breadcrumb";
+@import "/node_modules/bootstrap/scss/list-group";
+@import "/node_modules/bootstrap/scss/forms";
+// @import "/node_modules/bootstrap/scss/close";
+@import "/node_modules/bootstrap/scss/tooltip";
+@import "/node_modules/bootstrap/scss/popover";
+// @import "/node_modules/bootstrap/scss/offcanvas";
+// @import "/node_modules/bootstrap/scss/placeholders";
+
+@import "/node_modules/bootstrap/scss/utilities/api";
+// @import "/node_modules/bootstrap/scss/bootstrap";
+
+$font-primary: 'Suisse Intl Regular', sans-serif;
+
+@font-face {
+    font-family: 'Barlow Regular';
+    src: url(/assets/fonts/Barlow-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Suisse Intl Regular';
+    src: url(/assets/fonts/SuisseIntl-Regular.ttf);
+}
+
+@media screen and (max-width: 767px) {
+    p {
+        font-size: 18px !important;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    footer {
+        background-color: #fff;
+        position: fixed;
+        width: 100%;
+        bottom: 0px
+    }
+
+    .navbar-brand {
+        position: absolute;
+        width: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .dropdown-menu-center {
+        font-family: 'Barlow Regular';
+        font-size: 10px;
+        top: 37px !important;
+    }
+
+    .caret-up {
+        top: -13px !important;
+    }
+
+    .welcome, .featured, .vr {
+        border-right: 0px !important;
+        border-left: 0px !important;
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        font-family: $font-primary;
+    }
+
+    .welcome-container {
+        height: auto !important;
+    }
+
+    .featured {
+        border-top: 13px solid $border-dark;
+        border-bottom: 5px solid $border-dark;
+        img {
+            margin: auto;
+        }
+    }
+
+    .welcome {
+        border-bottom: 3px solid $border-dark;
+    }
+
+    .featured-image {
+        min-height: 170px;
+    }
+}
+
+p {
+    font-family: $font-primary;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+footer {
+    background-color: #F2F2F2;
+    font-family: $font-primary;
+    small > a, small {
+        color: #676767;
+        font-size: 12px;
+        text-decoration: none;
+    }
+    small > a:hover {
+        color: #3C3C40;
+    }
+}
+
+.navbar {
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+.nav-link, .nav-item {
+    color: #1C3C34;
+    font-family: $font-primary;
+    font-size: 14px;
+}
+
+.nav-link:active, .nav-link:hover {
+    color: #0033FF;
+}
+
+.dropdown:hover .dropdown-menu {
+    background-color: #000000CC;
+    border-radius: 1px;
+    display: block;
+    margin-top: 0;
+    opacity: 1;
+}
+
+.dropdown-menu-center {
+    top: 45px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.nav-link.dropdown-toggle {
+    margin-top: 3px;
+}
+
+.nav-link.dropdown-toggle::after {
+    vertical-align: sub;
+    content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+    border: none;
+    margin: 0px 3px;
+}
+
+.dropdown-item {
+    color: white;
+    font-size: 14px;
+    &:hover, &:active, &:focus {
+        color: white;
+        background: #3C3C40;
+    }
+}
+
+.caret-up {
+    position: absolute;
+    top: -17px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.bordered-left-thickest {
+    border-left: 19px solid $border-dark;
+}
+
+.bordered-right-thickest {
+    border-right: 19px solid $border-dark;
+}
+
+.bordered-left-thick {
+    border-left: 7px solid $border-dark;
+}
+
+.bordered-right-thick {
+    border-right: 7px solid $border-dark;
+}
+
+.bordered-right-thin {
+    border-right: 4px solid $border-dark;
+}
+
+.welcome-container {
+    min-height: 540px;
+}
+
+.flex-100 {
+    flex: 0 0 100%;
+}
+
+.featured-image {
+    width: 100%;
+    background-image: url(assets/svg/featured2.svg);
+    background-size: cover;
+    background-position: center center;
+}
+
+.form-switch {
+    box-shadow: none;
+    outline: none;
+}
+
+.form-check-input {
+    // background-color: #676767;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='f8f8f8'/%3e%3c/svg%3e");
+    &:checked {
+        background-color: #071D49;
+        border-color: #071D49;
+    }
+}
