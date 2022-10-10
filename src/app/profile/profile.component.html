@@ -1,1 +1,40 @@
-<p>profile works!</p>
+<div class="container mx-3 mx-md-auto col-md-4 pb-5">
+    <div class="my-4">
+        <ng-container *ngIf="!editMode; else editView">
+            <img class="flex-wrap d-block" src="assets/svg/profile-photo.svg" alt="">
+            <span (click)="editMode = !editMode">Edit</span>
+        </ng-container>
+    
+        <ng-template #editView>
+            <slim [options]="slimOptions">
+                <input type="file" name="foo">
+            </slim>
+            
+            <p>To replace an existing profile photo, delete it and upload a new photo. Click Save after to update your profile.</p>
+            <br>
+            <p>Supported file format: JPG; Maximum file size: 2MB</p>
+            <br>
+            <span (click)="editMode = !editMode">Cancel</span><button class="btn btn-primary" type="submit" (click)="onSubmit()">Save</button>
+        </ng-template>
+    </div>
+
+    <h6>Sarah Patricia Sarahson</h6>
+    <p>SVP, Occam Lab Pte Ltd</p>
+    <br>
+
+    <h6>Account Settings</h6>
+    <p>Email Address</p>
+    <p>Sarah.Patricia@tlf.com</p>
+    <br>
+
+    <p>Time Zone</p>
+    <p>(UTC+08:00) Kuala Lumpur, Singapore</p>
+    <p>Edit</p>
+    <br>
+
+    <p>Visibility</p>
+    <em>You are currently not visible to other attendees.</em>
+    <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+    </div>
+</div>
