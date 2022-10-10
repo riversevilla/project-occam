@@ -1,8 +1,8 @@
 <div class="container mx-3 mx-md-auto col-md-4 pb-5">
     <div class="my-4">
         <ng-container *ngIf="!editMode; else editView">
-            <img class="flex-wrap d-block" src="assets/svg/profile-photo.svg" alt="">
-            <span (click)="editMode = !editMode">Edit</span>
+            <img class="flex-wrap d-block img-preview" [src]="imageUrl" alt="">
+            <span (click)="editMode = !editMode" class="edit-link">Edit</span>
         </ng-container>
     
         <ng-template #editView>
@@ -14,9 +14,10 @@
             <br>
             <p>Supported file format: JPG; Maximum file size: 2MB</p>
             <br>
-            <span (click)="editMode = !editMode">Cancel</span><button class="btn btn-primary" type="submit" (click)="onSubmit()">Save</button>
+            <span class="edit-link pe-3" (click)="editMode = !editMode">Cancel</span><button class="btn btn-save" type="submit" (click)="onSubmit()">Save</button>
         </ng-template>
     </div>
+    <br>
 
     <h6>Sarah Patricia Sarahson</h6>
     <p>SVP, Occam Lab Pte Ltd</p>
@@ -29,7 +30,8 @@
 
     <p>Time Zone</p>
     <p>(UTC+08:00) Kuala Lumpur, Singapore</p>
-    <p>Edit</p>
+    <span class="edit-link">Edit</span>
+    <br>
     <br>
 
     <p>Visibility</p>

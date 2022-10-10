@@ -8,15 +8,17 @@ import { ProfileService } from './profile.service';
 })
 export class ProfileComponent implements OnInit {
 
-  editMode: boolean = true;
+  editMode: boolean = false;
   slimData: any;
   slim: any;
+  imageUrl: string;
 
   constructor(
     private profileService: ProfileService
   ) { }
 
   ngOnInit(): void {
+    this.imageUrl = 'assets/svg/profile-photo.svg';
   }
 
   slimOptions = {
@@ -34,17 +36,15 @@ export class ProfileComponent implements OnInit {
   onSubmit() {
     let image = this.slim.dataBase64.output.image;
 
-    fetch(image)
-      .then(res => res.blob())
-      .then(blob => {
-        this.profileService.loginUser().subscribe( result => {
-          if( result.status ) {
-            this.profileService.uploadImage(blob, result.auth_token).subscribe( result => {
-              let imageSource = result.image_url;
-              this.slim.load(imageSource);
-            });
-          }
-        });
+    fetch(image).then(res => res.blob()).then(blob => {
+      this.profileService.loginUser().subscribe( result => {
+        if( result.status ) {
+          this.profileService.uploadImage(blob, result.auth_token).subscribe( result => {
+            this.imageUrl = result.image_url;
+            this.editMode = false;
+          });
+        }
+      });
     });
   }
 }

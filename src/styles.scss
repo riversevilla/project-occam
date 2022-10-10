@@ -102,12 +102,33 @@ $font-primary: 'Suisse Intl Regular', sans-serif;
         }
     }
 
-    .welcome {
-        border-bottom: 3px solid $border-dark;
-    }
-
     .featured-image {
         min-height: 170px;
+    }
+
+    hr {
+        opacity: 1 !important;
+        background: $border-dark;
+    }
+
+    .hr-thickest {
+        height: 13px;
+    }
+
+    .hr-thick {
+        height: 5px;
+    }
+
+    .hr-thin {
+        height: 3px;
+    }
+    
+    .bordered-top-thick {
+        border-top: 5px solid $border-dark;
+    }
+    
+    .bordered-top-thin {
+        border-top: 3px solid $border-dark;
     }
 }
 
@@ -140,8 +161,9 @@ footer {
     font-size: 14px;
 }
 
-.nav-link:active, .nav-link:hover {
+.nav-link:active, .nav-link:hover, .edit-link {
     color: #0033FF;
+    cursor: pointer;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -237,4 +259,25 @@ footer {
 div.slim {
     border-radius: 50%;
     width: 200px;
+}
+
+.img-preview {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.btn-save {
+    background-color: #0033FF;
+    color: white;
+    width: 70px;
+    height: 29px;
+    border-radius: 15px;
+    line-height: 1;
+    &:hover {
+        background-color: #E7E7E7;
+        color: #CE426E;
+        font-family: 'Barlow Regaular';
+        text-transform: uppercase;
+    }
 }
