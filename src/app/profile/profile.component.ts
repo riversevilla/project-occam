@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from './profile.service';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
   imageUrl: string;
 
   constructor(
-    private profileService: ProfileService
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
     labelLoading: 'Uploading'
   };
 
-  slimInit( data: any, slim: any ) {
+  slimInit(data: any, slim: any) {
       this.slim = slim;
       this.slimData = data;
   };
@@ -36,14 +36,13 @@ export class ProfileComponent implements OnInit {
     let image = this.slim.dataBase64.output.image;
 
     fetch(image).then(res => res.blob()).then(blob => {
-      this.profileService.loginUser().subscribe( result => {
-        if( result.status ) {
-          this.profileService.uploadImage(blob, result.auth_token).subscribe( result => {
-            this.imageUrl = result.image_url;
-            this.editMode = false;
-          });
-        }
-      });
+      const userToken = sessionStorage.getItem('userToken');
+      if( userToken ) {
+        this.userService.uploadImage(blob, userToken).subscribe( result => {
+          this.imageUrl = result.image_url;
+          this.editMode = false;
+        });
+      }
     });
   }
 }

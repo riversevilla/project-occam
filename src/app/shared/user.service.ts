@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileService {
+export class UserService {
 
   private loginTestUrl: string = 'https://api.occamlab.com.sg/demo-occamlab/login-test';
   private uploadTestUrl: string = 'https://api.occamlab.com.sg/demo-occamlab/upload-test';
