@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-$border-dark: #1C3C34;
+$blue-dark: #1C3C34;
+$gray-light: #676767;
 
 @import "/node_modules/bootstrap/scss/functions";
 @import "/node_modules/bootstrap/scss/variables";
@@ -48,7 +49,7 @@ $font-primary: 'Suisse Intl Regular', sans-serif;
     src: url(/assets/fonts/SuisseIntl-Regular.ttf);
 }
 
-@media screen and (max-width: 767px) {
+@include media-breakpoint-down(md) {
     p {
         font-size: 18px !important;
     }
@@ -61,7 +62,7 @@ $font-primary: 'Suisse Intl Regular', sans-serif;
         background-color: #fff;
         position: fixed;
         width: 100%;
-        bottom: 0px
+        bottom: 0px;
     }
 
     .navbar-brand {
@@ -95,8 +96,8 @@ $font-primary: 'Suisse Intl Regular', sans-serif;
     }
 
     .featured {
-        border-top: 13px solid $border-dark;
-        border-bottom: 5px solid $border-dark;
+        border-top: 13px solid $blue-dark;
+        border-bottom: 5px solid $blue-dark;
         img {
             margin: auto;
         }
@@ -108,7 +109,7 @@ $font-primary: 'Suisse Intl Regular', sans-serif;
 
     hr {
         opacity: 1 !important;
-        background: $border-dark;
+        background: $blue-dark;
     }
 
     .hr-thickest {
@@ -124,15 +125,16 @@ $font-primary: 'Suisse Intl Regular', sans-serif;
     }
     
     .bordered-top-thick {
-        border-top: 5px solid $border-dark;
+        border-top: 5px solid $blue-dark;
     }
     
     .bordered-top-thin {
-        border-top: 3px solid $border-dark;
+        border-top: 3px solid $blue-dark;
     }
 }
 
 p {
+    color: $blue-dark;
     font-family: $font-primary;
     font-size: 14px;
     margin-bottom: 0;
@@ -208,23 +210,23 @@ footer {
 }
 
 .bordered-left-thickest {
-    border-left: 19px solid $border-dark;
+    border-left: 19px solid $blue-dark;
 }
 
 .bordered-right-thickest {
-    border-right: 19px solid $border-dark;
+    border-right: 19px solid $blue-dark;
 }
 
 .bordered-left-thick {
-    border-left: 7px solid $border-dark;
+    border-left: 7px solid $blue-dark;
 }
 
 .bordered-right-thick {
-    border-right: 7px solid $border-dark;
+    border-right: 7px solid $blue-dark;
 }
 
 .bordered-right-thin {
-    border-right: 4px solid $border-dark;
+    border-right: 4px solid $blue-dark;
 }
 
 .welcome-container {
@@ -277,7 +279,7 @@ div.slim {
     &:hover {
         background-color: #E7E7E7;
         color: #CE426E;
-        font-family: 'Barlow Regaular';
+        font-family: 'Barlow Regular';
         text-transform: uppercase;
     }
 }
