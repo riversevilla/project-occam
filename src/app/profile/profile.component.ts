@@ -8,7 +8,6 @@ import { UserService } from '../shared/user.service';
 export class ProfileComponent implements OnInit {
 
   editMode: boolean = false;
-  slimData: any;
   slim: any;
   imageUrl: string;
 
@@ -29,7 +28,6 @@ export class ProfileComponent implements OnInit {
 
   slimInit(data: any, slim: any) {
       this.slim = slim;
-      this.slimData = data;
   };
 
   onSubmit() {
